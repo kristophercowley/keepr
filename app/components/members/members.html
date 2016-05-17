@@ -8,14 +8,16 @@
 	<div class="my-keeps panel panel-default">
 		<div class="well">
 			<div class="my-keeps-header">
-				<span>My Keeps</span> <button class="btn btn-theme fa-lg theme-font" ng-click="$ctrl.show = !$ctrl.show">K</button>
+				<span>My Keeps and Vaults</span> <button class="btn btn-theme fa-lg theme-font" ng-click="$ctrl.show = !$ctrl.show">K</button>
+				<button class="btn btn-theme fa-lg theme-font" ng-click="$ctrl.showVault = !$ctrl.showVault">V</button>
+			</div>
 			</div>
 		</div>
 		<div class="panel-body">
 			<div class="row" ng-show="$ctrl.show">
 				<div class="col-sm-8 col-sm-offset-2">
 					<div class="panel">
-						<form class="form">
+						<form class="form" ng-submit="$ctrl.addKeep($ctrl.newKeep)">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Title" ng-model="$ctrl.newKeep.title">
 							</div>
@@ -44,10 +46,40 @@
 					</div>
 				</div>
 			</div>
+			
+</div>
+				<div class="my-keeps panel panel-default">
+		<!--<div class="well">
+			<div class="my-keeps-header">
+				<span>My Vaults</span> <button class="btn btn-theme fa-lg theme-font" ng-click="$ctrl.showVault = !$ctrl.showVault">V</button>
+			</div>
+		</div>-->
+		<div class="panel-body">
+			<div class="row" ng-show="$ctrl.showVault">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="panel">
+						<form class="form" ng-submit="$ctrl.addVault($ctrl.newVault)">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Title" ng-model="$ctrl.newVault.title">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="description" ng-model="$ctrl.newVault.description">
+							</div>
+							
+							<div class="row">
+								<div class="col-sm-6">
+									<button class="btn btn-theme btn-block" type="submit">Keep</button>
+								</div>
+								<div class="col-sm-6">
+									<button class="btn btn-info btn-block" type="reset">Reset</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 			<div class="row" ng-show="!$ctrl.show">
-				<keeps-component member="$ctrl.member"></keeps-component>
+				<keeps-component keeps="$ctrl.keeps" member="$ctrl.member"></keeps-component>
 			</div>
 		</div>
 	</div>
-
-</div>
