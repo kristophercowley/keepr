@@ -30,8 +30,7 @@ Requirements:
 What this site is already pretty. :) Make sure the feature you add are attactive.  
 
 Requirements:
-- `2.5 points`: When hovering over the keep show the three buttons from the bottm overlaid on the image
-- `2.5 points`: The image should be on large display with at least one other element positioned over the top of the image.  
+- `5 points`: When hovering over the keep show the three buttons from the bottm overlaid on the image
 
 ###BONUS - Sharing the fun `Total Points: 5`
 Requirements: 
